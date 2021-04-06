@@ -20,12 +20,12 @@ public class BonsaiController {
 	@Autowired
 	private BonsaiService service;
 	
-	@GetMapping("/versaook")
+	@GetMapping("/versao")
 	public String versao() {
 		return "v1.0.0";
 	}
 	
-	@PostMapping
+	@PostMapping()
 	@ResponseStatus( code = HttpStatus.CREATED)
 	public Bonsai salvar(@RequestBody  Bonsai bonsai) {
 		return service.salvar(bonsai); 
@@ -33,12 +33,8 @@ public class BonsaiController {
 	
 	@GetMapping("{id}")
 	@ResponseStatus(code = HttpStatus.OK)
-	public Bonsai consultarPorId(@PathVariable Integer id) {
-		
+	public Bonsai consultarPorId(@PathVariable Integer id) {		
 		return service.consultarPorId(id);
-		
-		
-		
 	}
 	
 }

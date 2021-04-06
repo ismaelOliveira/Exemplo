@@ -25,7 +25,6 @@ public class BonsaiServiceImpl implements BonsaiService {
 
 	@Override
 	public Bonsai consultarPorId(Integer id) {
-		// TODO Auto-generated method stub
 		return bonsaiRepositorio.findById(id).orElseThrow(() -> new NegocioException(mensage.messageSource().getMessage("bonsai-nao-encontrado", null, null)));
 	}
 
