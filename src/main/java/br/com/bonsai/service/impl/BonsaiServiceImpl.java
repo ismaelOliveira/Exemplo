@@ -28,6 +28,24 @@ public class BonsaiServiceImpl implements BonsaiService {
 		return bonsaiRepositorio.findById(id).orElseThrow(() -> new NegocioException(mensage.messageSource().getMessage("bonsai-nao-encontrado", null, null)));
 	}
 
+	@Override
+	public Bonsai consultarPorNome(String nome) {
+		return bonsaiRepositorio.findByNome(nome).get(0);
+	}
+
+	@Override
+	public Bonsai alterar(Bonsai bonsai) {
+		
+		return bonsaiRepositorio.save(bonsai);
+	}
+	@Override
+	public void deletar(Integer id) {
+		
+		 bonsaiRepositorio.deleteById(id);
+	}
+	
+
+
 	
 	
 }

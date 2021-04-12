@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.envers.Audited;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +23,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Audited
 public class Bonsai {
 
 	@Id
@@ -38,6 +41,15 @@ public class Bonsai {
 	@Column(name = "estilo")
 	@NotNull
 	private String estilo;
+	
+	
+	@Column(name = "especie")
+	@NotNull
+	private String especie;
+	
+	@Column(name = "tipo")
+	@NotNull
+	private String tipo;
 	
 	@Column(name = "data_cadastro")
 	private LocalDate dataCadastro;
