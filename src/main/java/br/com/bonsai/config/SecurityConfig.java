@@ -67,6 +67,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)// indica qua não tem sessão para a api com isso toda requisição tem que ser enviado o token
 			.and()
 				.addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
+
+
 		
 	}
 	
